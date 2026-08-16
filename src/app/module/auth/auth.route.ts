@@ -18,6 +18,11 @@ router.post(
   validateRequest(UserValidation.LoginZodSchema),
   AuthController.loginUser,
 );
+router.post(
+  "/verify-email",
+  validateRequest(UserValidation.PatientEmailVerifyZodSchema),
+  AuthController.verifyPatientEmail,
+);
 router.get(
   "/me",
   auth(Role.ADMIN, Role.DOCTOR, Role.PATIENT, Role.SUPER_ADMIN),
