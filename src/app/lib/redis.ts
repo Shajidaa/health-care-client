@@ -9,3 +9,12 @@ export const redisClient = createClient({
     port: Number(config.redis_port),
   },
 });
+// // 1. Crucial: Catch unhandled error events to prevent app crashes
+// redisClient.on("error", (err) => {
+//   console.error("❌ Redis Client Error:", err);
+// });
+
+// // 2. Optional: Log successful connection
+// redisClient.on("connect", () => {
+//   console.log("🔗 Connected to Redis successfully");
+// });
